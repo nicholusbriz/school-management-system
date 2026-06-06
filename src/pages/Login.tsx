@@ -40,8 +40,9 @@ export default function Login() {
       );
       navigate('/dashboard');
     },
-    onError: (err: Error) => {
-      setError(err.message || 'Login failed');
+    onError: (err: any) => {
+      const errorMessage = err?.response?.data?.message || err?.message || 'Login failed. Please check your email and try again.';
+      setError(errorMessage);
     },
   });
 
