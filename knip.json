@@ -1,0 +1,24 @@
+{
+  "entry": [
+    "backend/src/server.ts"
+  ],
+  "project": [
+    "src/**/*.{ts,tsx}",
+    "backend/src/**/*.ts"
+  ],
+  "ignoreDependencies": [
+    "lucide-react",
+    "react-hook-form",
+    "sonner",
+    "zod",
+    "@prisma/client",
+    "prisma",
+    "express",
+    "jsonwebtoken",
+    "cors",
+    "morgan",
+    "dotenv",
+    "bcryptjs",
+    "express-validator"
+  ]
+}
