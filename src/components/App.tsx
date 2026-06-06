@@ -150,11 +150,6 @@ export default function App() {
     logout();
   };
 
-  const handleLogin = () => {
-    // Navigate to dashboard after login
-    window.location.href = '/dashboard';
-  };
-
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
