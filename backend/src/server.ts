@@ -25,10 +25,12 @@ app.use('/api', routes);
 app.use(notFoundHandler);
 app.use(errorHandler);
 
-// Start server
-const PORT = config.port;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT} in ${config.nodeEnv} mode`);
-});
+// Start server only if not in Vercel environment
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  const PORT = config.port;
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT} in ${config.nodeEnv} mode`);
+  });
+}
 
 export default app;
