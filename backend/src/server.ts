@@ -13,7 +13,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(corsMiddleware);
 
-// Health check
+// Root & health check
+app.get('/', (req, res) => {
+  res.json({ status: 'ok', message: 'School Management API' });
+});
+
 app.get('/health', (req, res) => {
   res.json({ status: 'ok', message: 'Server is running' });
 });
